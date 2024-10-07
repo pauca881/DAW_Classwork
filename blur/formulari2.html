@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pt1-b: Exercici 5 dels exercicis de classe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <a href="index.html" >Tornar a la pàgina principal</a>
+</head>
+<body>
+
+    <!-- He fet un formulari de nou amb les noves funcions que es demanen -->
+
+    <h4>Formulari Pt1-b: Exercici 5 dels exercicis de classe</h4>
+    <h4>Pau Cañizares</h4>
+
+<form id="formu" action="">
+
+    <label>Nom:</label>
+    <input type="text" id="nom"><br><br>
+    
+    <label>Edat</label>
+    <input type="number" id="edat"><br><br>
+
+    <label>Data de naixement:</label>
+    <input type="date" id="data">
+
+    <p>Selecciona el sexe:</p>
+    <input type="radio" id="home" name="sexe" value="home">
+    <label>Home</label>
+    <input type="radio" id="dona" name="sexe" value="dona">
+    <label>Dona</label>
+    <input type="radio" id="altres" name="sexe" value="altres">
+    <label>Altres</label><br><br>
+    
+
+    <p>Selecciona les aficions que vulguis:</p>
+
+    <input type="checkbox" id="af1" value="Videojocs">
+    <label> Videojocs</label><br>
+    <input type="checkbox" id="af2" value="Cinema">
+    <label> Cinema</label><br>
+    <input type="checkbox" id="af3" value="Musica">
+    <label> Música</label><br>
+    <input type="checkbox" id="af4" value="Esports">
+    <label> Esports</label><br><br>
+
+    <!-- El botó per defecte esta desactivat -->
+    <input type="submit" id="boto_enviar" value="Enviar" disabled>
+    
+</form><br>
+
+<div id="taula_info"></div>
+
+<script src="./js/script3.js"> </script>
+
+
+</body>
+</html>
