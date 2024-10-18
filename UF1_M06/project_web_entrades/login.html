@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login i Registre</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+
+
+        <!-- menú navegació -->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">entradas.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Despegable -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown">
+                                Eventos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Teatro</a></li>
+                                <li><a class="dropdown-item" href="#">Musicales</a></li>
+                                <li><a class="dropdown-item" href="#">Promociones</a></li>
+                                <li><a class="dropdown-item" href="#">Todos los eventos</a></li>
+                            </ul>
+                        </li>
+    
+                        <!-- Despegable -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown">
+                                Lugar
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Barcelona</a></li>
+                                <li><a class="dropdown-item" href="#">Madrid</a></li>
+                                <li><a class="dropdown-item" href="#">Sevilla</a></li>
+                                <li><a class="dropdown-item" href="#">Valencia</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+    
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    </form>
+                    
+                    <a href="login.html" class="btn btn-light ms-2">👤</a>
+                </div>
+            </div>  
+        </nav><br><br><br>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+
+                    <!-- tabs per escollir -->
+                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Registre</button>
+                        </li>
+                    </ul>
+
+                    <!-- Formulari Login -->
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form id="formulari_login">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                
+                                <button type="submit" id="submitLogin" class="btn btn-primary w-100">Iniciar sessió</button>
+                            </form>
+                        </div>
+
+                        <!-- Formulari Registre -->
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form id="formulari_registre">
+                                <div class="mb-3">
+                                    <label for="nom_registre" class="form-label">Nom</label>
+                                    <input type="text" class="form-control" id="nom_registre" required>
+                                    <span id="nom_error" class="error">El nom ha de tindre entre 2 i 50 caracters</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email_registre" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email_registre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contrasenya_registre" class="form-label">Contrasenya</label>
+                                    <input type="password" class="form-control" id="contrasenya_registre" required>
+                                    <span id="pass_error" class="error">La contrasenya ha de tindre entre 8 i 12 caracters, 1 lletra minúscula, 1 lletra mayúscula, 1 dígit</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contrasenya_confirmar_registre" class="form-label">Confirmar Contrasenya</label>
+                                    <input type="password" class="form-control" id="contrasenya_confirmar_registre" required>
+                                    <span id="conf_pass_error" class="error">Les contrasenyes no coincideixen</span>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="termes_registre" required>
+                                    <label class="form-check-label" for="termes_registre">Accepto els termes i condicions</label>
+                                    <span id="therms_error" class="error">Has de clicar al checkbox per acceptar els termes i condicions</span>
+                                </div>
+                                <button type="submit" id="boto_enviar" class="btn btn-primary w-100" disabled>Registrar-me</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMPRIMIR TAULA -->
+
+    <br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <div id="resultats" class="p-5 bg-light border">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
