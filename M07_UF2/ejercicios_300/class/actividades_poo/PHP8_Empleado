@@ -1,0 +1,50 @@
+<?php
+
+class Persona {
+
+
+       //Construsctor en versión PHP7
+
+    // private string $nombre;
+    // private string $apellido;
+    // private int $sueldo;
+
+    // public function __construct(string $nombre, string $apellido, int $sueldo){
+    //     $this->nombre=$nombre;
+    //     $this->apellido=$apellido;
+    //     $this->sueldo=$sueldo;
+    // }
+
+    //Constrctor en versión PHP8
+    // Constructor con promoción de propiedades
+    public function __construct(
+        public string $nombre,
+        public string $apellido,
+        public int $sueldo
+    ){}
+
+    //Getters and setters
+
+    public function getNombre():string{
+        return $this->nombre;
+    }
+    public function setNombre(string $nombre){
+        $this->nombre=$nombre;
+    }
+    public function getApellido():string{
+        return $this->apellido;
+    }
+    public function setApellido(string $apellido){
+        $this->apellido=$apellido;
+    }
+    public function getSueldo():int{
+        return $this->sueldo;
+    }
+    public function setSueldo(int $sueldo){
+        $this->sueldo=$sueldo;
+    }
+
+
+}
+
+?>
