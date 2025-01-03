@@ -23,6 +23,10 @@ export const routes: Routes = [
     component:Compo5Component
 },
 {
+    path:'inscripcio_plantilla',
+    component:Compo6Component
+},
+{
     path:'**',
     component: Page404Component
 }
