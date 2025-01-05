@@ -1,0 +1,13 @@
+<h1>Registro (formulario reactive)</h1>
+<form [formGroup]="contactForm">
+    <p>Nombre:<input type="text" formControlName="nombre" required>
+    </p>
+
+    <p>Email:<input type="text" formControlName="email" required>
+    </p>
+
+    <p>Mensaje:<textarea rows="5" cols="70" formControlName="mensaje" required></textarea>
+    </p>
+
+    <button type="submit">Enviar mensaje</button>
+</form>
