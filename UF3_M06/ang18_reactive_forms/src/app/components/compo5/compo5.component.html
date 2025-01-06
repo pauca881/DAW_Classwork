@@ -1,0 +1,157 @@
+<br><h3>Formulari d'inscripció</h3><br>
+
+<!-- TODO:
+ 
+    Imprimir resultats de forma més clara
+
+-->
+
+<!-- 
+
+NgIF y @if es parecido
+@if es una nueva sintaxis de control de flujo. Se asemeja a JS. 
+
+Ngif tiene una directiva estructural ( una directiva que cambia la estructura del DOM ) 
+*ngIf="condicion; else alternativo"></elemento-a-mostrar>
+
+-->
+
+<form [formGroup]="inscripcioForm">
+
+    <p>Nom d'usuari:<input type="text" formControlName="nomUsuari" required>
+    </p>
+
+    @if(this.inscripcioForm.get('nomUsuari')?.invalid && this.inscripcioForm.get('nomUsuari')?.touched){
+        @if(this.inscripcioForm.get('nomUsuari')?.errors?.['minlength']){
+            <p class="text-danger">Minim 6 caràcters!!</p>
+        }
+        @if(this.inscripcioForm.get('nomUsuari')?.errors?.['pattern']){
+            <p class="text-danger">Ha de contindre lletres només!!</p>
+        }
+    }
+
+    <p>Contrasenya:<input type="text" formControlName="contrasenya" required>
+    </p>
+
+
+    @if(this.inscripcioForm.get('contrasenya')?.invalid && this.inscripcioForm.get('contrasenya')?.touched){
+        @if(this.inscripcioForm.get('contrasenya')?.errors?.['minlength']){
+            <p class="text-danger">Minim 8 caràcters!!</p>
+        }
+        @if(this.inscripcioForm.get('contrasenya')?.errors?.['pattern']){
+            <p class="text-danger">Ha de contindre lletres i números només</p>
+        }
+    }
+
+    <p>Confirmar contrasenya:<input type="text" formControlName="confirmacontrasenya" required>
+    </p>   
+
+    @if(this.inscripcioForm.get('confirmacontrasenya')?.invalid && this.inscripcioForm.get('confirmacontrasenya')?.touched){
+
+        @if(this.inscripcioForm.get('confirmacontrasenya')?.value !== this.inscripcioForm.get('contrasenya')?.value){
+
+            <p class="text-danger">Les contrasenyes han de ser iguals</p>        
+    }
+
+    }
+
+    <p>Correu electrònic:<input type="text" formControlName="correuelectronic" required>
+    </p>
+
+    @if(this.inscripcioForm.get('correuelectronic')?.invalid && this.inscripcioForm.get('correuelectronic')?.touched){
+        @if(this.inscripcioForm.get('correuelectronic')?.errors?.['email']){
+
+            <p class="text-danger">Has d'introduir un email vàlid</p>
+        }
+       
+    }
+
+<!-- El track del for serveix perque angular identifiqui de forma unica cada element -->
+
+    <label for="seleccion">Seleccione el estado civil:</label>
+<select id="seleccion" formControlName="estatcivil">
+  @for (opcion of opciones; track opcion) {
+    <option [value]="opcion">{{ opcion }}</option>
+  }
+</select>
+
+        @if(this.inscripcioForm.get('estatcivil')?.invalid && this.inscripcioForm.get('estatcivil')?.touched){
+            @if(this.inscripcioForm.get('estatcivil')?.errors?.['required']){
+
+                <p class="text-danger">Selecciona un estat civil</p>
+            }
+        
+        }
+
+    <br><br>
+
+
+
+        <label>Sexe:</label>
+        <div>
+          <input type="radio" id="masculi" formControlName="sexe" value="Masculí">
+          <label for="masculi">Masculí</label>
+        </div>
+        <div>
+          <input type="radio" id="femeni" formControlName="sexe" value="Femení">
+          <label for="femeni">Femení</label>
+        </div>
+        <div>
+          <input type="radio" id="altre" formControlName="sexe" value="Altre">
+          <label for="altre">Altre</label>
+        </div><br>
+
+            
+        <label>De què vols rebre informació?:</label><br>
+        
+          @for (opcio_checkbox of checkboxes; track opcio_checkbox) {
+            <input type="checkbox" formControlName="rebreinfo" [value]="opcio_checkbox">
+          <label>{{ opcio_checkbox }}</label><br>
+          }
+         <br>
+
+         @if(this.inscripcioForm.get('rebreinfo')?.invalid && this.inscripcioForm.get('rebreinfo')?.touched){
+            @if(this.inscripcioForm.get('rebreinfo')?.errors?.['required']){
+
+                <p class="text-danger">Selecciona de que vols rebre informació</p>
+            }
+        
+        }
+
+
+    <p><input type="checkbox" formControlName="acceptarcondicions" required> <strong>Acceptar condicions</strong> 
+    </p>
+
+    <button type="submit" (click)="imprimir()" [disabled]="inscripcioForm.invalid">Enviar</button>
+</form><br>
+
+
+<div id="resultats"></div>
+
+
+
+
+<!-- EXERCICI 5.- Formularis reactius:
+
+Fes un formulari que contingui:
+
+Nom d’usuari * (camp de texte, només admet lletres i un mínim de 6)
+
+Contrasenya * (camp de texte, admet lletres i números i un mínim de 8)
+
+Confirmar contrasenya * (igual que l’anterior i ha de coincidir)
+
+Correu electrònic * (camp de texte, només admet email)
+
+Estat civil * (camp de tipus select que rep els seus valors des d’un array amb 3 valors com poden ser: Casat/da, Solter/a, Divorciat/da)
+
+Sexe * (camp de tipus radio amb 3 valors com poden ser: Dona, Home, Altres)
+
+De què vols rebre informació? (camps checkboxes que els seus valors surten d’un array amb 3 valors com poden ser Videojocs, Accesoris, Novetats del mercat)
+
+Acceptar condicions * (camp checkbox)
+
+Enviar (botó que está deshabilitat fins que no siguin correctes tots els camps. En el cas que tot estigui correcte, s’imprimeixen els valors introduïts)
+
+Tots els camps amb * són requerits (obligatoris). Tots els missatges d’error sortiran visibles al costat de cada camp. Mentre hi hagi errors, no es podrà clicar al botó Enviar. Fes servir formularis reactius. -->
+
