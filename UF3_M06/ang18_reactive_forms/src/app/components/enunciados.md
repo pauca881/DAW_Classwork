@@ -27,3 +27,33 @@ Un cop que et surti:
 - Intenta validar tot el que entri per les caixes de texte
 
 - Intenta ficar missatge informatiu explícit, en el cas d'error en algun camp de texte
+
+EXERCICI 5.- Formularis reactius:
+
+Fes un formulari que contingui:
+
+Nom d’usuari * (camp de texte, només admet lletres i un mínim de 6)
+
+Contrasenya * (camp de texte, admet lletres i números i un mínim de 8)
+
+Confirmar contrasenya * (igual que l’anterior i ha de coincidir)
+
+Correu electrònic * (camp de texte, només admet email)
+
+Estat civil * (camp de tipus select que rep els seus valors des d’un array amb 3 valors com poden ser: Casat/da, Solter/a, Divorciat/da)
+
+Sexe * (camp de tipus radio amb 3 valors com poden ser: Dona, Home, Altres)
+
+De què vols rebre informació? (camps checkboxes que els seus valors surten d’un array amb 3 valors com poden ser Videojocs, Accesoris, Novetats del mercat)
+
+Acceptar condicions * (camp checkbox)
+
+Enviar (botó que está deshabilitat fins que no siguin correctes tots els camps. En el cas que tot estigui correcte, s’imprimeixen els valors introduïts)
+
+Tots els camps amb * són requerits (obligatoris). Tots els missatges d’error sortiran visibles al costat de cada camp. Mentre hi hagi errors, no es podrà clicar al botó Enviar. Fes servir formularis reactius.
+
+EXERCICI 6.- Formularis basats en plantilla i classes JavaScript:
+
+Fes el formulari de l'exercici 5 PERÒ fent servir formularis basats en plantilla. Utilitza una classe de nom Client de la mateixa manera que hem fet servir la classe Actor a l'exemple de classe
+
+
