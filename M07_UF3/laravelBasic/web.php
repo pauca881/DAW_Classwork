@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inici');
     });
     
 Route::get('/holamundo', function () {
@@ -17,3 +17,11 @@ Route::get('/holatodos', function () {
 Route::get('/index', function () {
     return view('index');
     });
+
+Route::get('/nosaltres', function () {
+    return view('nosaltres');
+    })->name('nosaltres');
+    
+Route::get('/onestem', function () {
+    return view('onestem');
+    })->name('onestem');
