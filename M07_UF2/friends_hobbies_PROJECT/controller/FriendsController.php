@@ -188,8 +188,10 @@ class FriendsController {
 
             if($delete){
                 $_SESSION['message']=CategoryMessage::INF_FORM['delete'];
-                $friends = $this->model->listAll();
-                $this->view->display("view/form/FriendsList.php", $friends);
+                header("Location: ?menu=friends&option=list_all_friends");
+
+                //$friends = $this->model->listAll();
+                //$this->view->display("view/form/FriendsList.php", $friends);
                 }
             else {
                 $_SESSION['message']=CategoryMessage::ERR_DAO['delete'];
