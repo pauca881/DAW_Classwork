@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('dni')->unique();
+            $table->integer('edad');
+            $table->date('data_naixement');
+            $table->text('observacions')->nullable(); //pot ser null
         });
     }
 
