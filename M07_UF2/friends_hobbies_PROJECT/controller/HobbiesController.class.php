@@ -209,8 +209,10 @@ class HobbiesController {
             if($delete){
 
                 $_SESSION['message']=CategoryMessage::INF_FORM['delete'];
-                $hobbies = $this->model->listAll();
-                $this->view->display("view/form/HobbieList.php", $hobbies);
+                // $hobbies = $this->model->listAll();
+                // $this->view->display("view/form/HobbieList.php", $hobbies);
+                header("Location: ?menu=hobbies&option=list_all_hobbies");
+
 
                 }
                 else {
