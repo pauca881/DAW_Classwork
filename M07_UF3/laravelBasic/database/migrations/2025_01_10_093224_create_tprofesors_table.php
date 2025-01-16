@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('dni')->unique();
-            $table->integer('edad');
-            $table->date('data_naixement');
-            $table->text('observacions')->nullable(); //pot ser null
+            $table->string('email')->unique()->nullable(); // 'email' acepta NULL
+            $table->string('password')->nullable(); // 'password' acepta NULL
+            $table->string('dni')->unique()->nullable(); // 'dni' acepta NULL
+            $table->integer('edad')->nullable(); // 'edad' acepta NULL
+            $table->date('data_naixement')->nullable(); // 'data_naixement' acepta NULL
+            $table->text('observacions')->nullable(); // 'observacions' ya está nullable
+            //pot ser null
         });
     }
 
