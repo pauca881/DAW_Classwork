@@ -52,3 +52,52 @@ Enviar (botó que está deshabilitat fins que no siguin correctes tots els camps
 
 Tots els camps amb * són requerits (obligatoris). Tots els missatges d’error sortiran visibles al costat de cada camp. Mentre hi hagi errors, no es podrà clicar al botó Enviar. Fes servir formularis reactius.
 
+EXERCICI 6.- Formularis basats en plantilla i classes JavaScript:
+
+Fes el formulari de l'exercici 5 PERÒ fent servir formularis basats en plantilla. Utilitza una classe de nom Client de la mateixa manera que hem fet servir la classe Actor a l'exemple de classe
+
+EXERCICI .- Directives i pipes
+
+Aplica al teu formulari:
+
+a) 3 directives personalitzades (validació d'inputs)
+
+b) 3 pipes en la sortida de dades,
+
+EXERCICI 7.- Serveis
+
+Crear una component que contingui un formulari de login. Cal escriure a sota "Usuari correcte" o "Credencials incorrectes" depenent de la resposta d'un servei un cop cliquem al botó del formulari.
+
+Aquest servei té dos mètodes. Un dels mètodes genera un array de 1000 objectes usuaris (amb els camps user i password generats en un bucle de 1000 voltes). L'altra mètode recull dos paràmetres provienents de la component nova i mira si hi ha algun usuari dins de l'array que coincideixi el seu nom d'usuari i contrasenya.
+
+Crea una altra component de nom registre (només té dos camps: nom d'usuari i password), que envii dos valors al servei i aquest l'afegeixi a l'array. 
+
+El formularis (reactive o template) només comproven que els camps siguin obligatoris.
+
+EXERCICI 8.- Angular UPC
+
+Projecte UPC. D'aquest projecte podem començar a treballar la part estàtica, és a dir, la que no necessita connectar-se a cap servidor. Fes que el teu projecte contingui diferents components: presentació de la idea general, presentació dels components, link al video de youtube, login, registre,...Tot amb routing, formularis reactius, ...
+
+EXERCICI 9.- Serveis d'Angular.
+
+a) Crea un servei que contingui dos mètodes:
+
+--  un mètode que generi un array de 300 usuaris de tipus User de manera aleatòria, i
+
+--  un segon mètode que faci la validació d'un usuari (de tipus User). És a dir, li passem un User amb només els atributs informats de nom i password, i el mètode ens retorna si està o no està dins de l'array.
+
+b) Crea una nova component de login. Un cop fiquem el nostre nom d'usuari i la nostra contrasenya al formulari, es passen aquests valors al servei creat a l'apartat anterior i aquest servei ens retorna si està o no validat correctament. La component de login ens mostra el missatge corresponent.
+
+c) A continuació, crea una nova entrada al teu routing i menú per poder accedir-hi.
+
+EXERCICI 10.-Comunicació entre components.
+
+1.- Crea una component que cridi al servei creat a l'exercici 8 (només necessitem ara 10 usuaris, canvia el 300 per 10!!!!). Fes que imprimeixi aquests 10 usuaris.
+
+2.- Incorpora al menú la crida a aquesta component nova (routing)
+
+3.- Fes que aparegui al costat dret de cada usuari del llistat un botó de nom "Editar".
+
+4.- Quan cliqui al botó "Editar" d'un dels usuaris del llistat, a sota d'aquest mateix llistat ens ha d'apareèixer un formulari (que abans no hi era) amb els inputs omplerts amb els valors que corresponen a aquest usuari. (passem l'usuari cap a una component nova de nom EditUser)
+
+
