@@ -3,7 +3,8 @@ import { ValidacioService } from '../../services/validacio.service';
 import { User } from '../../model/User';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms'; 
-
+import { CookieService } from 'ngx-cookie-service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-compo7',
