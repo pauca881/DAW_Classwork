@@ -27,7 +27,7 @@ export class Compo7Component {
     password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)])
   });
 
-  constructor(private validacioService: ValidacioService) { }
+  constructor(private validacioService: ValidacioService, private myCookie: CookieService) { }
 
   login(): void {
 
