@@ -27,7 +27,16 @@ export class Compo7Component {
     password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)])
   });
 
-  constructor(private validacioService: ValidacioService, private myCookie: CookieService) { }
+  constructor(private validacioService: ValidacioService, private myCookie: CookieService) {
+
+    this.myCookie.set('Cookiedeprova', 'HEllo cookie', 2);
+    this.myCookie.set('Numero', '345');
+
+    console.log(this.myCookie.get('Cookiedeprova'));
+    console.log(this.myCookie.get('Numero'));
+
+    
+  }
 
   login(): void {
 
