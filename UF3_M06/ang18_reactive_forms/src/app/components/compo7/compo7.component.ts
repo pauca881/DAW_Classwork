@@ -35,6 +35,9 @@ export class Compo7Component {
     console.log(this.myCookie.get('Cookiedeprova'));
     console.log(this.myCookie.get('Numero'));
 
+    this.myCookie.delete('Cookiedeprova');
+    localStorage['user'] = "PEP";
+    localStorage.setItem('saludo', "Hola");
     
   }
 
