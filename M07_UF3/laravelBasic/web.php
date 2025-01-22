@@ -38,4 +38,13 @@
     Route::post('/buscar',[mycontroller::class, 'f_buscar'])->name('dades-buscar');
 
 
+    Route::get('/borrar', [mycontroller::class, 'f_borrar'])->name('dades-borrar');
+    Route::delete('/borrar/{fila}',[mycontroller::class, 'f_borrarfila'])->name('dades-borrarfila');
+
+    Route::get('/modificar',[mycontroller::class, 'f_modificar'])->name('dades-modificar');
+    Route::get('/modificar/{fila}',[mycontroller::class, 'f_modificarfila'])->name('dades-modificarfila');
+    Route::patch('/modificar/{fila}',[mycontroller::class, 'f_actualitzarfila'])->name('dades-actualitzarfila');
+
+
+
 
