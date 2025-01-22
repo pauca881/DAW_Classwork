@@ -110,5 +110,45 @@ class mycontroller extends Controller
         return redirect()->route('dades-borrar')->with('success','eliminat correctament');      
     }   
 
+        public function f_modificar()
+    {
+        $dades=tprofesor::all();
+        //return $dades; //Tornarà JSON
+        return view('modificar', compact('dades'));            
+ 
+    }
+ 
+    public function f_modificarfila ($dni)
+    {
+        $fila = tprofesor::query();    
+        $fila->where('dni','like',"%$dni%");        
+        $fila = $fila->get(); 
+ 
+        return view('modificarfila',compact('fila'));           
+    }
+ 
+    public function f_actualitzarfila (Request $request, tprofesor $fila)
+    {
+        $request->validate(
+            [
+                'nombre'=> 'required|min:3'
+            ],
+            [
+                'nombre.required'=>"El nom és obligatori",
+                'nombre.min'=>"3 caracters mínim"
+            ]
+            );
+ 
+        $fila->dni=$request->dni;
+        $fila->nom=$request->nombre;
+        $fila->cognom=$request->apellido;
+        $fila->update();
+        return redirect()->route('dades-actualitzarfila',$fila)->with('success','actualitzat correctament');
+ 
+    }
+
+    
+
+
 
 }
