@@ -147,8 +147,4 @@ class mycontroller extends Controller
  
     }
 
-    
-
-
-
 }
