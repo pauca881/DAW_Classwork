@@ -95,5 +95,20 @@ class mycontroller extends Controller
         return view('buscarresultado', compact('dades'));  
     }
 
+    public function f_borrar()
+    {
+        $dades=tprofesor::all();
+        //return $dades; //Tornarà JSON
+        return view('borrar', compact('dades'));          
+    }
+ 
+    public function f_borrarfila($dni)
+    {
+        $fila = tprofesor::query();    
+        $fila->where('dni','like',"%$dni%");        
+        $fila->delete();
+        return redirect()->route('dades-borrar')->with('success','eliminat correctament');      
+    }   
+
 
 }
