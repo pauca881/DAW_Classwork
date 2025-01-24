@@ -73,3 +73,13 @@ si en la vista consultar detalle canviem en la barra de navegació el dni i no e
 10- Seeder
 Crear el seeder para tprofessor i talumnes
 
+11- Factory
+Crear el factory amb els fakers de talumnes
+
+12- Actualitzar
+Fer actualitzar per a talumne
+
+13- Afegir una nova columna sense eliminar les dades
+afegeix la columna “tratamiento” (Sr,Sra) a talumne sense eliminar les dades
+
+
