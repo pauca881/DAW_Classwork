@@ -5,7 +5,7 @@
 - [SSH resources - Ubuntu sudo without pwd](https://help.ubuntu.com/community/RootSudo#Remove_Password_Prompt_For_sudo)
   
 **Servidors de Transferència de Fitxers**
-Ubuntu Server Guide: FTP Server
+[Ubuntu Server Guide: FTP Server](https://ubuntu.com/server/docs/set-up-an-ftp-server)
 FTP (File Transfer Protocol)
 
 **Servidor web**
