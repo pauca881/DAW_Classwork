@@ -9,19 +9,19 @@
 - FTP (File Transfer Protocol)
 
 **Servidor web**
-Web Application (WebApp)
-Arquitectures Web
-Presentació Arquitectura Web (Pau Lopez)
+- Web Application (WebApp)
+- Arquitectures Web
+- Presentació Arquitectura Web (Pau Lopez)
 
 **Protocol HTTP**
-Introducció HTTP
-Presentació Protocol HTTP (Pau Lopez)
+- Introducció HTTP
+- Presentació Protocol HTTP (Pau Lopez)
 
 **Instal·lació servidor web Apache2 a Ubuntu:**
-[Ubuntu Server Guide: HTTPD - Apache2 Web Server](https://ubuntu.com/server/docs/how-to-install-apache2)
+- [Ubuntu Server Guide: HTTPD - Apache2 Web Server](https://ubuntu.com/server/docs/how-to-install-apache2)
 
 **Instal·lació PHP al servidor web Apache2 a Ubuntu:**
-[Ubuntu Server Guide: PHP - Scripting Language](https://ubuntu.com/server/docs/how-to-install-and-configure-php)
+- [Ubuntu Server Guide: PHP - Scripting Language](https://ubuntu.com/server/docs/how-to-install-and-configure-php)
 
 **Instal·lació MySQL a Ubuntu:**
 MySQL
