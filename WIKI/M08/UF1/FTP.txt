@@ -1,0 +1,110 @@
+**Protocols de transferència de fitxers**
+Protocol sense seguretat: FTP (File Transfer Protocol)
+
+Protocol amb seguretat (autenticació, confidencialitat i integritat): SSH (Secure SHell)
+
+**Modes d'accés**
+Modo activo: en este modo, es el servidor FTP el que inicia las conexiones de datos y obliga al cliente a abrir puertos para atender dichas conexiones. Por lo tanto, el equipo en el que se ejecuta el cliente FTP, tiene que aceptar conexiones a puertos superiores al 1023 que pueden comprometer la seguridad del equipo.
+
+Los cortafuegos instalados tanto en el equipo donde se encuentra instalado el cliente FTP como en la red a la que pertenece, denegarán estas conexiones aleatorias para prevenir ataques.
+
+Para solventar el problema de que sea el servidor FTP el que inicia las conexiones de datos, se desarrolló el modo pasivo.
+
+El modo activo facilita la configuración y la administración del servidor FTP pero genera un problema de seguridad a los clientes y problemas de acceso si están detrás de un cortafuegos.
+
+ ftp_activo.jpg
+
+Modo pasivo: en este modo, es siempre el cliente FTP el que inicia las conexiones con el servidor FTP, tanto las de control como las de datos. El puerto 20/TCP del servidor no se utiliza.
+
+El modo pasivo evita el problema de seguridad de que el cliente FTP tenga que aceptar conexiones en puertos mayores a 1023 pero traslada este problema de seguridad al servidor FTP. La máquina donde se ejecuta el servidor FTP tiene que aceptar conexiones en múltiples puertos y esto es una amenaza para la seguridad del equipo.
+
+El modo pasivo traslada el problema de seguridad al servidor FTP e implica una configuración más compleja en el servidor FTP.
+
+ ftp_pasivo.jpg
+
+**Tipus d'accés**
+Acceso anónimo: el cliente FTP se conecta con un usuario especial cuyo nombre estándar es anonymous o ftp. Por norma general, el usuario anónimo, salvo que el administrador del servidor FTP decida otra cosa, solo puede descargar archivos y su acceso está limitado a un directorio especial del servidor. Está enjaulado (chroot) o confinado en ese directorio especial.
+
+Acceso autorizado: el cliente FTP se conecta con un usuario existente en el servidor. Este usuario puede ser:
+
+Un usuario del sistema operativo (usuarios locales) donde está instalado el servidor FTP.
+Un usuario virtual, creado para el acceso por FTP. Sus credenciales pueden estar almacenadas en una base de datos, en un servicio de directorio (LDAP), en un fichero de texto, etc.
+El usuario una vez autenticado accede a un directorio del servidor en el que puede estar o no enjaulado (chroot). Además, el administrador del servidor FTP asignará los privilegios que tendrá cada usuario, como pueden ser: descargar, subir, eliminar, limitar el espacio, acceso a determinados directorios, limitar la velocidad, etc.
+
+**Llistat de ports TCP reservats més típics**
+20, 21 FTP
+22 SSH
+Anexo: Números de puertos de red
+
+**Comandes FTP (File Transfer Protocol)**
+client FTP modo línia. Per accedir a la màquina remota:
+
+ftp host_remote
+open servidor–>Inicia una connexió amb un servidor FTP.
+
+close o disconnect–>Finalitza una connexió FTP sense tancar el programa client.
+
+**Comandes comunes FTP (File Transfer Protocol) i SFTP (SSH File Transfer Protocol)**
+CTRL+SHIFT+L–>esborra la pantalla
+
+bye o quit–>Finalitza una connexió FTP i la sessió de treball amb el programa client.
+
+cd directori–>Canvia el directori de treball al servidor.
+
+delete arxiu–>Esborra un arxiu al servidor
+
+mdelete patró–>Esborra múltiples arxius basat en un patró que s'aplica al nom.
+
+dir–>Mostra el contingut del directori en el qual estem en el servidor.
+
+get arxiu–>Obté un archiu
+
+noop No Operation–>Se li comunica al servidor que el client està en mode de no operació, el servidor usualment respon amb un «ZZZ» i refresca el comptador de temps inactiu de l'usuari.
+
+mget arxius–>Obté múltiples arxius
+
+hash–>Activa la impressió de caràcters # a mesura que es transfereixen arxius, a manera de barra de progrés.
+
+lcd directori–>Canvia el directori de treball local.
+
+ls–>Mostra el contingut del directori en el servidor.
+
+prompt–>Activa / desactiva la confirmació per part de l'usuari de l'execució d'ordres. Per exemple a l'esborrar múltiples arxius.
+
+put arxiu–>Envia un arxiu al directori actiu del servidor.
+
+mput arxius–>Envia múltiples arxius.
+
+pwd–>Mostra el directori actiu en el servidor.
+
+rename arxiu–>Canvia el nom a un arxiu al servidor.
+
+rmdir directori–>Elimina un directori en el servidor si aquest directori està buit.
+
+status–>Mostra l'estat actual de la connexió.
+
+bin o binary–>Activa el mode de transferència binari.
+
+ascii–>Activa el mode de transferència en mode text ASCII.
+
+!–>Permet sortir a línia d'ordres temporalment sense tallar la connexió. Per tornar, teclejar exit en la línia d'ordres.
+
+? nom de la comanda–>Mostra la informació relativa a la comanda.
+
+? o help–>Mostra una llista dels comandaments disponibles.
+
+append nom de l'arxiu–>Continua una descàrrega que s'ha tallat prèviament.
+
+bell–>Activa / desactiva la reproducció d'un so quan ha acabat qualsevol procés de transferència d'arxius.
+
+glob–>Activa / desactiva la visualització de noms llargs del nostre PC.
+
+literal–>Amb aquesta ordre es poden executar comandaments del servidor de manera remota. Per saber els disponibles s'utilitza: literal help.
+
+mkdir–>Crea el directori indicat de forma remota.
+
+quote–>Fa la mateixa funció que literal.
+
+send nom de l'arxiu–>Envia l'arxiu indicat al directori actiu del servidor.
+
+user–>Per canviar el nostre nom d'usuari i contrasenya sense necessitat de sortir de la sessió ftp.
