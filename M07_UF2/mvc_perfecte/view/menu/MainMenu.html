@@ -1,0 +1,102 @@
+<!-- Card container -->
+<div class="card">
+  <!-- Card header -->
+  <div class="card-header">
+    <!-- Button group for Propietarios -->
+    <div class="btn-group">
+      <!-- Dropdown for Propietarios -->
+      <div class="dropdown mr-2">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Propietarios
+        </button>
+
+        <!-- Dropdown menu for Propietarios -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="index.php?menu=owner&option=list_all"
+            >Listar todos</a
+          >
+          <a
+            class="dropdown-item"
+            href="index.php?menu=owner&option=form_search_pet_by_owner"
+            >Buscar Mascota</a
+          >
+          <a class="dropdown-item" href="index.php?menu=owner&option=form_add"
+            >Añadir Propietario</a
+          >
+          <a
+            class="dropdown-item"
+            href="index.php?menu=owner&option=form_find_owner_to_update"
+            >Modificar</a
+          >
+        </div>
+      </div>
+
+      <!-- Dropdown for Mascotas -->
+      <div class="dropdown mr-2">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Mascotas
+        </button>
+
+        <!-- Dropdown menu for Mascotas -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="index.php?menu=pet&option=list_all"
+            >Listar todas</a
+          >
+          <a
+            class="dropdown-item"
+            href="index.php?menu=pet&option=form_search_pet_by_id"
+            >Buscar</a
+          >
+          <a class="dropdown-item" href="index.php?menu=pet&option=form_add"
+            >Añadir mascota</a
+          >
+          <a
+            class="dropdown-item"
+            href="index.php?menu=pet&option=form_add_history"
+            >Añadir una LineaHistorial</a
+          >
+        </div>
+      </div>
+
+      <!-- Dropdown for Lineas Historial -->
+      <div class="dropdown mr-2">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Lineas Historial
+        </button>
+
+        <!-- Dropdown menu for Lineas Historial -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="index.php?menu=history&option=list_all"
+            >Listar líneas del historial</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card body -->
+<div class="card-body">
+  <!-- Content for the card body goes here -->
+</div>
