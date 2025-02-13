@@ -2,7 +2,7 @@
 
 - Instal·lacio Java JDK
 - - Instal·lacio java jdk - canviar versio java per defecte
-- - update-alternatives command
+- - [update-alternatives command](https://bitmingw.com/2019/08/28/ubuntu-update-alternatives/)
     
 - Tomcat
 - - Apache Tomcat - Which Version?
