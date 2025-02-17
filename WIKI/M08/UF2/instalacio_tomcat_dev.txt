@@ -1,0 +1,31 @@
+El tomcat està escrit en java, heu d'instal·lar primer el java.
+
+Heu de controlar la versió de tomcat i la versió de java: ho podeu veure a https://tomcat.apache.org/whichversion.html
+
+Per evitar problemes de permisos, enlloc de fer servir l'ordre sudo apt, baixeu el fitxer comprimit del 'Core' del tomcat de la versió desitjada. I descomprimiu-lo al home del vostre usuari.
+
+Per exemple, per la versió 9. Aneu a la pàgina https://tomcat.apache.org/ a l'apartat Dowload per la versió Tomcat9, escolliu dels 'Binary Distributions' del core la url del fitxer .tar.gz. Feu servir wget per descarregar-lo directament a ubuntu al vostre home:
+
+cd
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.59/bin/apache-tomcat-9.0.59.tar.gz
+I descomprimiu-lo:
+
+tar -zxvf apache-tomcat-9.0.59.tar.gz
+Les opcions al descomprimir son: -z per descomprimir si el format es .gz -x per extreure els fitxers -v per mostrar l'informació del que està fent (verbose) -f <fitxer> per indicar el fitxer
+
+L'iniciarem de forma manual (sense crear un servei):
+
+cd apache-tomcat-9.0.59/bin
+./startup.sh
+Per aturar-lo de forma manual:
+
+cd apache-tomcat-9.0.59/bin
+./shutdown.sh
+Podeu comprovar els ports oberts per veure que està funcionant. Com l'esteu executant amb el vostre usuari us mostrarà el proces java:
+
+ss -tlpn
+Les opcions a l'ordre ss: -t veure els ports del protocol TCP -l per veure els listening -p per mostrar el procés que està escoltat (només els vostres, executeu amb sudo per veure'ls tots) -n indica els ports en format numéric
+
+Per defecte està escoltant del port 8080.Comproveu amb el navegador que veieu la pàgina inicial de tomcat amb la url:
+
+http://<ip>:8080/
